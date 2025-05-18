@@ -1,0 +1,373 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ACTUAL CSS STYLING STARTS HERE */
+
+:root{
+    --color-white: #FBFFFE;
+    --color-gray: #6D676E;
+    --color-yellow: #FAA916;
+    --color-red: #96031A;
+    --color-black: #1B1B1E;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100vw;
+    font-family: Raleway;
+    color: var(--color-black);
+}
+
+h1 {
+    font-family: Josefin Sans;
+    font-size: 5rem;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 3px 3px var(--color-yellow);
+    padding: 2rem 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bolder;
+    padding: 1rem 0;
+    border-bottom: solid 2px var(--color-yellow);
+}
+
+h3{
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+    padding: 0 2.5rem;
+}
+
+.banner{
+    margin-top: 55vh;
+    background-color: var(--color-white);
+    padding-top: 50px;
+}
+
+.homepagePhoto {
+    z-index: -1;
+    max-width: 100%;
+    margin: -15% 0;
+    position: fixed;
+    left: 0;
+    mask-image: linear-gradient(rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 60%)
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 8rem;
+}
+
+
+
+.featuredItems{
+    margin: 5rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border-bottom: 2px solid #FAA916;
+    width: fit-content;
+}
+
+.individualFeaturedItems{
+    display: flex;
+    font-size: 1rem;
+    overflow-x: scroll;
+}
+
+.individualFeaturedItems::-webkit-scrollbar{
+    display: none;
+}
+
+.wrapContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5rem 10rem;
+}
+
+/*Grid for the homepage, scroll further down for viewItems*/
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    flex: none;
+    grid-gap: 20px;
+}
+
+.item-price{
+    padding: 0.5rem 0;
+}
+
+.item-card{
+    box-shadow: 1px 1px 5px var(--color-gray);
+    width: 250px;
+    max-height: 400px;
+    padding: 25px;
+    margin: 15px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    justify-content: space-between;
+    transition: 0.2s ease-in-out;
+}
+
+.item-card:hover{
+    transform: scale(1.05);
+}
+
+.add-to-cart-btn{
+    display: flex;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+.add-to-cart-btn:hover{
+    cursor: pointer;
+}
+
+.add-to-cart-btn:active{
+    transform: scale(0.95);
+}
+
+.add-to-cart-btn:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+}
+
+.arrow {
+    border: solid var(--color-black);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrows {
+    box-shadow: 1px 1px 5px var(--color-gray);
+    border-radius: 50%;
+    padding: 5px 8px;
+    cursor: pointer;
+    margin: 0 1rem;
+}
+
+.right{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left{
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+/* Grid for viewItems list 4 by 5 */
+.item-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height:fit-content;
+    width: fit-content;
+    justify-content: end;
+}
+/* Grid for company items  */
+.item-grid-co{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: end;
+}
+
+.center{
+    justify-content: center;
+    margin: 5rem 0
+}
+
+.section{
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.filterSection{
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    box-shadow: 1px 1px 3px var(--color-gray);
+}
+
+.filterTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.companyFilter{
+    height: 20vh;
+    overflow-y: scroll;
+    margin: 1rem;
+    max-width: 200px;
+}
+
+.categoryAndLocationFilter{
+    margin: 1rem;
+}
+
+.itemsAndPagination{
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination-controls{
+    margin: 2rem auto;
+}
+
+.pagination-controls button{
+    background-color: var(--color-yellow);
+    border-radius: 5px;
+    border: solid 2px var(--color-black);
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.pagination-controls button:hover{
+    cursor: pointer;
+}
+
+.pagination-controls button:active{
+    transform: scale(0.95);
+}
+
+.pagination-controls button:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+}
+
+.dropdownMenu{
+    animation-name: dropdownAnim;
+    animation-duration: 0.5s;
+    z-index: 10;
+}
+
+@keyframes dropdownAnim {
+    0% {
+        transform-origin: top;
+        transform: translateY(-100px);
+        opacity: 0%;
+    }
+    100% {
+        transform-origin: top;
+        opacity: 100%;
+        transform: translateY(0px);
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.fullViewCartPage{
+    margin: 5rem;
+}
+
+.itemInCart{
+    display: flex;
+    margin: 2rem;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px var(--color-gray);
+    min-height: 200px;
+}
+
+.detailsOfCartItem{
+    justify-content: center;
+    padding: 1.5rem;
+    margin: auto 0;
+    line-height: 1.5rem;
+}
+
+button{
+    background-color: var(--color-yellow);
+    border: 2px solid var(--color-black);
+    color: var(--color-white);
+    font-family: Raleway;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+button:disabled{
+    opacity: 50%;
+    cursor: not-allowed;
+}
+
+.viewCartPageButtons{
+    padding: 10px;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+.orderTotal {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 7rem;
+}
